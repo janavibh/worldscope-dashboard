@@ -1,64 +1,55 @@
-# Web Development Project 5 - *WorldScope Dashboard*
+# Web Development Project 6 - *WorldScope Dashboard: Part 2*
 
 Submitted by: **Janavi Bhalala**
 
-This web app: **WorldScope is a global data dashboard built with React. It fetches country data from a public API and displays an at-a-glance summary of countries, regions, income levels, capitals, and location data. Users can search for countries by name and filter the dashboard by region.**
+This web app: **WorldScope is an interactive global data dashboard built with React. It fetches country data from a public API and displays summary statistics, searchable and filterable country data, clickable detail views, and charts that help users understand global region and income-level patterns.**
 
-Time spent: **2** hours spent in total
+Time spent: **3** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-* [x] **The site has a dashboard displaying a list of data fetched using an API call**
+* [x] **Clicking on an item in the list view displays more details about it**
 
-  * [x] The dashboard displays at least 10 unique items, one per row
-  * [x] The dashboard includes at least two features in each row
+  * [x] Clicking on an item in the dashboard list navigates to the detail view for that item
+  * [x] Detail view includes extra information not included in the dashboard view
+  * [x] The same sidebar is displayed in detail view as in dashboard view
 
-* [x] **The useEffect() React hook and async/await syntax are used**
+* [x] **Each detail view of an item has a direct, unique link to that item’s page**
 
-* [x] **The app dashboard includes at least three summary statistics about the data**
+  * [x] Each country detail page has a unique URL using the country code
+  * [x] The URL changes when a user opens a country detail view
 
-  * [x] First unique summary statistic: total countries shown
-  * [x] Second unique summary statistic: regions represented
-  * [x] Third unique summary statistic: income levels shown
-  * [x] Additional summary statistic: countries with capitals
+* [x] **The app includes at least two unique charts developed using the fetched data that tell an interesting story**
 
-* [x] **A search bar allows the user to search for an item in the fetched data**
-
-  * [x] The search bar correctly filters items in the list, only displaying items matching the search query
-  * [x] The list of results dynamically updates as the user types into the search bar
-
-* [x] **An additional filter allows the user to restrict displayed items by specified categories**
-
-  * [x] The filter restricts items in the list using a different attribute than the search bar
-  * [x] The filter correctly filters items in the list, only displaying items matching the selected region
-  * [x] The dashboard list dynamically updates as the user adjusts the filter
+  * [x] At least two charts are incorporated into the dashboard view of the site
+  * [x] Each chart describes a different aspect of the dataset
+  * [x] A bar chart shows the number of countries by region
+  * [x] A pie chart shows the number of countries by income level
 
 ## Stretch Features
 
 The following **optional** features are implemented:
 
-* [x] Multiple filters can be applied simultaneously
+* [x] The site’s customized dashboard contains more content that explains what is interesting about the data
 
-  * [x] Users can search by country name and filter by region at the same time
+  * [x] Each chart includes a short description explaining what the visualization represents
+  * [x] The dashboard includes summary statistics that update based on the filtered data
 
-* [x] Filters use different input types
-
-  * [x] The search feature uses a text input
-  * [x] The region filter uses a dropdown menu
-
-* [ ] User can enter specific bounds for filter values
+* [ ] The site allows users to toggle between different data visualizations
 
 ## Additional Features
 
 The following **additional** features are implemented:
 
-* [x] The app uses a polished dark dashboard UI with glowing cards and glass-style sections
-* [x] The table displays country name, region, income level, capital, latitude, and longitude
-* [x] The app displays loading and error states
-* [x] Summary statistics update dynamically based on the search and filter results
-* [x] The layout is responsive for smaller screens
+* [x] Added a persistent sidebar that appears on both the dashboard and detail views
+* [x] Added clickable country rows that open a detailed country page
+* [x] Added a direct link display for each country detail view
+* [x] Added a polished dark glassmorphism dashboard UI
+* [x] Added two Recharts visualizations using fetched API data
+* [x] Kept the original search and region filter functionality from Part 1
+* [x] Maintained summary statistic cards on the dashboard
 
 ## Video Walkthrough
 
@@ -66,13 +57,13 @@ Here's a walkthrough of implemented required features:
 
 <img src='walkthrough.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
 
-GIF created with **ezgif**.
+GIF created with **Kap / ezgif**.
 
 ## Notes
 
-One challenge I encountered was choosing an API that reliably returned enough data for a dashboard. I used the World Bank Countries API because it provides structured country information such as region, income level, capital city, latitude, and longitude.
+One challenge I encountered was adding detail views without creating a separate routing setup. I solved this by using the browser hash in the URL so each country has a direct and unique link, such as `#/country/IND`.
 
-Another challenge was making the summary statistics update correctly when the user searched or filtered the data. I solved this by calculating the statistics from the filtered country list instead of the full dataset.
+Another challenge was creating charts that told different stories about the same dataset. I used a bar chart to show how countries are distributed by region and a pie chart to show how countries are grouped by income level.
 
 ## License
 
